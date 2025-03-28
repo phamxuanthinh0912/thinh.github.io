@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umino Store</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
@@ -17,16 +18,16 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <div>
-                <img src="./img/Logo-1.png" alt="">
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    <div class="container-fluid d-flex justify-content-between align-items-center header">
+        <div>
+            <img src="./img/Logo-1.png" alt="">
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
@@ -61,9 +62,9 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">BlogBlog</a>
-                        <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu" aria-labelledby="blogDropdown">
                             <li><a class="dropdown-item" href="#">Blog 1</a></li>
                             <li><a class="dropdown-item" href="#">Blog 2</a></li>
                         </ul>
@@ -72,17 +73,30 @@
                     <li class="nav-item"><a class="nav-link" href="#">Buy Umino!</a></li>
                 </ul>
             </div>
-            <div class="icons">
-                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="#"><i class="fa-regular fa-user"></i></a>
-                <a href="#"><i class="fa-regular fa-clock"></i></a>
-                <a href="#"><i class="fa-regular fa-heart"></i></a>
-                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-            </div>
+        </nav>
+        <div class="icons">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#" class="d-none d-lg-block"><i class="fa-regular fa-user"></i></a>
+            <a href="#" class="d-none d-lg-block"><i class="fa-regular fa-clock"></i></a>
+            <a href="#">
+                <div class="nav-item">
+                    <img src="./img/wishlis.png" alt="">
+                    <div>Wishlist</div>
+                    <span class="badge-heart">2</span>
+                </div>
+            </a>
+            <a href="#" class="d-none d-lg-block">
+                <div class="nav-item">
+                    <img src="./img/cart.png" alt="">
+                    <div>Cart</div>
+                    <span class="badge-cart">2</span>
+                </div>
+            </a>
         </div>
-    </nav>
+
+    </div>
     <!-- Slide -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel-slide slide position-relative" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                 class="active"></button>
@@ -120,34 +134,46 @@
             </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-prev d-none d-lg-flex" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon" aria-hidden="true">
+                <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5.77754 9.66675L1.80488 5.69409L5.77754 1.72144C5.92988 1.58081 6.00605 1.41089 6.00605 1.21167C6.00605 1.00073 5.92988 0.819092 5.77754 0.666748C5.63691 0.526123 5.46113 0.455811 5.25019 0.455811C5.03926 0.455811 4.86348 0.526123 4.72285 0.666748L0.222851 5.16675C0.070507 5.31909 -0.00566483 5.50073 -0.00566483 5.71167C-0.00566483 5.91089 0.070507 6.08081 0.222851 6.22144L4.72285 10.7214C4.86348 10.8738 5.03926 10.95 5.25019 10.95C5.46113 10.95 5.63691 10.8738 5.77754 10.7214C5.92988 10.5808 6.00605 10.4109 6.00605 10.2117C6.00605 10.0007 5.92988 9.81909 5.77754 9.66675Z"
+                        fill="#111111" />
+                </svg>
+            </span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-next d-none d-lg-flex" type="button" data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon" aria-hidden="true">
+                <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.27754 10.7214C1.13691 10.8738 0.961132 10.95 0.750195 10.95C0.539257 10.95 0.363476 10.8738 0.222851 10.7214C0.070507 10.5808 -0.00566483 10.4109 -0.00566483 10.2117C-0.00566483 10.0007 0.070507 9.81909 0.222851 9.66675L4.19551 5.69409L0.222851 1.72144C0.070507 1.58081 -0.00566483 1.41089 -0.00566483 1.21167C-0.00566483 1.00073 0.070507 0.819092 0.222851 0.666748C0.363476 0.526123 0.539257 0.455811 0.750195 0.455811C0.961132 0.455811 1.13691 0.526123 1.27754 0.666748L5.77754 5.16675C5.92988 5.31909 6.00605 5.50073 6.00605 5.71167C6.00605 5.91089 5.92988 6.08081 5.77754 6.22144L1.27754 10.7214Z"
+                        fill="#111111" />
+                </svg>
+            </span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
     <!-- Featured Collections -->
-    <div class="container">
+    <div class="carousel-container">
         <div class="title">
             <h3>Featured Collections</h3>
             <p>Elevate your style with our chic featured collection - Where fashion meets flair effortlessly.</p>
         </div>
 
         <div class="categories-wrapper">
-            <div class="wrapper-clothing">
+            <div class="wrapper-clothing d-flex align-items-end">
                 <img src="./img/img1.png" alt="">
                 <button>Clothing</button>
             </div>
-            <div class="wrapper-sunglasses">
+            <div class="wrapper-sunglasses d-flex align-items-end">
                 <img src="./img/img2.png" alt="" style="border-radius: 10px;">
                 <button>Sunglasses</button>
             </div>
-            <div class="wrapper-bags">
+            <div class="wrapper-bags d-flex align-items-end">
                 <img src="./img/img3.jpg" alt="">
                 <button>Bags</button>
             </div>
@@ -158,12 +184,12 @@
         </div>
     </div>
     <!-- New Arrivals -->
-    <div class="container">
+    <div class="">
         <div class="caption">
             <h4>New Arrivals</h4>
             <p>Here's some of our new arrivals products people are in love with.</p>
         </div>
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex d-lg-none justify-content-center align-items-center">
             <button class="prev-btn">❮</button>
             <button class="next-btn">❯</button>
         </div>
@@ -173,7 +199,7 @@
                     <img src="./img/img5.png" alt="">
                     <div class="product-content">
                         <p>Square Textured Striped</p>
-                        <p class="d-block d-xl-none">T-shirt</p>
+                        <p class="d-block d-lg-none">T-shirt</p>
                         <div class="star-wrap">
                             <!-- SVG stars -->
                         </div>
@@ -203,7 +229,7 @@
                     <img src="./img/img6.png" alt="">
                     <div class="product-content">
                         <p>Square Textured Striped</p>
-                        <p class="d-block d-xl-none">T-shirt</p>
+                        <p class="d-block d-lg-none">T-shirt</p>
                         <div class="star-wrap">
                             <!-- SVG stars -->
                         </div>
@@ -233,7 +259,7 @@
                     <img src="./img/img7.png" alt="">
                     <div class="product-content">
                         <p>Square Textured Striped</p>
-                        <p class="d-block d-xl-none">T-shirt</p>
+                        <p class="d-block d-lg-none">T-shirt</p>
                         <div class="star-wrap">
                             <!-- SVG stars -->
                         </div>
@@ -263,7 +289,7 @@
                     <img src="./img/img8.png" alt="">
                     <div class="product-content">
                         <p>Square Textured Striped</p>
-                        <p class="d-block d-xl-none">T-shirt</p>
+                        <p class="d-block d-lg-none">T-shirt</p>
                         <div class="star-wrap">
                             <!-- SVG stars -->
                         </div>
@@ -292,30 +318,66 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <hr class="custom-line mt-5">
+
+    <hr style="margin: 100px 0;">
+
     <!-- footer -->
-    <div class="footer d-flex flex-column flex-lg-row">
+    <div class="d-flex flex-column flex-lg-row carousel-container">
         <div class="contact col-md-4 ">
             <img src="./img/Logo-1.png" alt="">
             <div style="font-size: 14px;">
-                <p class="mt-4">268 St, South New York/NY 98944, United States</p>
-                <p>+222-1800-2628</p>
+                <p class="mt-4 mb-0">268 St, South New York/NY 98944, United States</p>
+                <p class="mb-0">+222-1800-2628</p>
                 <p>blueskytechcompany@gmail.com</p>
             </div>
             <div class="icons2 mt-4">
-                <a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok fa-xl"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube fa-xl"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="17.5" stroke="#555555" />
+                        <path
+                            d="M21.6 12.0001H14.4C13.0745 12.0001 12 13.0746 12 14.4001V21.6001C12 22.9255 13.0745 24.0001 14.4 24.0001H21.6C22.9255 24.0001 24 22.9255 24 21.6001V14.4001C24.0001 13.0746 22.9255 12.0001 21.6 12.0001ZM20.4 13.8001H22.2V15.6001H20.4V13.8001ZM18 15.6001C19.3255 15.6001 20.4 16.6746 20.4 18.0001C20.4 19.3256 19.3255 20.4001 18 20.4001C16.6745 20.4001 15.6 19.3256 15.6 18.0001C15.6 16.6746 16.6745 15.6001 18 15.6001ZM22.8 21.6001C22.8 22.2629 22.2627 22.8001 21.6 22.8001H14.4C13.7373 22.8001 13.2 22.2629 13.2 21.6001V17.4001H14.46C14.0996 19.3554 15.3926 21.2326 17.3479 21.593C19.3032 21.9533 21.1804 20.6603 21.5408 18.705C21.5836 18.4726 21.6035 18.2365 21.6 18.0001C21.597 17.7988 21.577 17.5981 21.54 17.4001H22.8V21.6001H22.8Z"
+                            fill="#555555" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="17.5" stroke="#555555" />
+                        <path
+                            d="M16.9886 24C15.9308 24 14.9163 23.5966 14.1682 22.8785C13.4202 22.1604 13 21.1865 13 20.1709C13 19.1554 13.4202 18.1815 14.1682 17.4634C14.9163 16.7453 15.9308 16.3418 16.9886 16.3418H17.9625V18.2106H16.9886C16.5841 18.2106 16.1886 18.3257 15.8522 18.5415C15.5159 18.7573 15.2537 19.064 15.0989 19.4228C14.9441 19.7816 14.9036 20.1764 14.9825 20.5573C15.0614 20.9382 15.2562 21.2881 15.5423 21.5627C15.8283 21.8373 16.1928 22.0244 16.5896 22.1001C16.9864 22.1759 17.3976 22.137 17.7714 21.9884C18.1452 21.8398 18.4646 21.5881 18.6894 21.2652C18.9141 20.9422 19.0341 20.5626 19.0341 20.1742V12H20.9807V12.9338C20.9807 13.4546 21.1962 13.9541 21.5798 14.3223C21.9634 14.6906 22.4836 14.8975 23.0261 14.8975H24V16.7629H23.0193C22.2984 16.7639 21.591 16.5753 20.9739 16.2175V20.1709C20.973 21.1856 20.5529 22.1586 19.8058 22.8764C19.0587 23.5942 18.0456 23.9983 16.9886 24Z"
+                            fill="#555555" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="17.5" stroke="#555555" />
+                        <path
+                            d="M24.9882 14.5648C24.8236 13.9529 24.3412 13.4706 23.7294 13.3058C22.6117 13 18.1411 13 18.1411 13C18.1411 13 13.6706 13 12.5529 13.2942C11.9529 13.4588 11.4587 13.953 11.2941 14.5648C11 15.6823 11 18 11 18C11 18 11 20.3294 11.2941 21.4352C11.4589 22.047 11.9411 22.5294 12.553 22.6941C13.6823 23 18.1412 23 18.1412 23C18.1412 23 22.6117 23 23.7294 22.7058C24.3413 22.5411 24.8236 22.0588 24.9884 21.447C25.2824 20.3294 25.2824 18.0118 25.2824 18.0118C25.2824 18.0118 25.2942 15.6823 24.9882 14.5648ZM16.7177 20.1412V15.8588L20.4353 18L16.7177 20.1412Z"
+                            fill="#555555" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="17.5" stroke="#555555" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.9184 12H12.066L16.5298 18.6281L12 24H13.5877L17.2347 19.6747L20.1476 24H24L19.3764 17.1347L23.7059 12H22.1183L18.6714 16.0879L15.9184 12ZM17.4993 17.9239L14.2821 13.2286H15.2134L17.9508 17.2237L18.3878 17.8614L21.7755 22.8054H20.8442L17.9793 18.6242L17.4993 17.9239Z"
+                            fill="#555555" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="17.5" stroke="#555555" />
+                        <path
+                            d="M16.3334 14.6667V16.0001H15V18.0001H16.3334V24H19V18.0001H20.7734L21 16.0001H19V14.8334C19 14.2934 19.0533 14.0067 19.8866 14.0067H21V12H19.2134C17.08 12.0001 16.3334 13.0001 16.3334 14.6667Z"
+                            fill="#555555" />
+                    </svg>
+                </a>
             </div>
-            <div class="follow mt-4">
-                <img src="./img/follow on shop.png" alt="">
+            <div class="follow my-4">
+                <img src="./img/follow-on-shop.png" alt="">
             </div>
         </div>
-        <div class="contact2 col-md-2">
+        <div class="contact2 col-md-2 py-4">
             <h4 style="font-size: 16px; font-weight: 600;" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">HOT
@@ -329,7 +391,7 @@
                 <p>Online Exclusive</p>
             </div>
         </div>
-        <div class="contact3 col-md-2">
+        <div class="contact3 col-md-2 py-4">
             <h4 style="font-size: 16px; font-weight: 600;" data-bs-toggle="collapse" data-bs-target="#navbar"
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">CUSTOMER SERVICE</h4>
             <div style="font-size: 14px;" class="collapse navbar-collapse d-md-block" id="navbar">
@@ -342,7 +404,7 @@
                 <p>Store Locations</p>
             </div>
         </div>
-        <div class="subscribe col-md-4">
+        <div class="subscribe col-md-4 py-4">
             <h4 style="font-size: 16px; font-weight: 600;" data-bs-toggle="collapse" data-bs-target="#navbarr"
                 aria-controls="navbarr" aria-expanded="false" aria-label="Toggle navigation">SING UP TO NEWSLETTER</h4>
             <div class="email collapse navbar-collapse d-md-block" id="navbarr">
@@ -356,16 +418,16 @@
             </div>
         </div>
     </div>
-    <footer class="footer2 bg-white">
-        <div class="container">
-            <div class="row align-items-center">
+    <footer class="bg-white">
+        <div class="carousel-container">
+            <div class="row align-items-center footer2">
                 <div class="col-md-4 text-md-start text-center">
-                    <div class="d-inline-flex gap-2">
-                        <select class="form-select form-select-sm w-auto custom-select">
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-2">
+                        <select class="w-auto custom-select">
                             <option>English</option>
                             <option>Vietnamese</option>
                         </select>
-                        <select class="form-select form-select-sm w-auto custom-select">
+                        <select class="w-auto custom-select">
                             <option>United States (USD)</option>
                             <option>Vietnam (VND ₫)</option>
                         </select>
@@ -404,28 +466,29 @@
         <div class="nav-item">
             <img src="./img/wishlis.png" alt="">
             <div>Wishlist</div>
-            <span class="badge">2</span>
+            <span class="badge-heart">2</span>
         </div>
         <div class="nav-item">
             <img src="./img/cart.png" alt="">
             <div>Cart</div>
-            <span class="badge">2</span>
+            <span class="badge-cart">2</span>
         </div>
     </div>
-    <div class="btn-container" id="floatingButtons">
-        <a href="#" id="scrollToTop">
-            <img src="./img/backto.png" alt="Scroll to top" class="custom-btn">
+    <div class="btn-container custom-btn" id="floatingButtons">
+        <a href="#" class="scrollToTop">
+            <img src="./img/backto.png" alt="Scroll to top" class="">
         </a>
-        <a href="link-chat.html">
-            <img src="./img/Chat.png" alt="Chat" class="custom-btn">
+        <a href="link-chat.html" class="message">
+            <img src="./img/Chat.png" alt="Chat" class="">
         </a>
     </div>
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js.js"></script>
+    <script src="./carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

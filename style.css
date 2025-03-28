@@ -1,51 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Jost", sans-serif ;
+    font-family: "Jost", sans-serif;
     font-weight: 400;
     line-height: 100%;
 }
+
 /* Navigation Bar */
+.header {
+    height: 70px;
+    padding: 0 30px !important;
+}
 
 .navbar {
     padding: 15px 0;
 }
+
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
 }
-.navbar-nav {
-    margin: auto;
-}
+
 .navbar-nav .nav-item {
     position: relative;
 }
+
 .navbar-nav .nav-link {
     font-size: 1rem;
     padding: 0 15px;
     color: black;
 }
+
 .navbar-nav .nav-link:hover {
     color: #000;
     font-weight: bold;
 }
+
 .dropdown-menu {
     min-width: 200px;
 }
+
 .icons {
     display: flex;
     gap: 15px;
 }
+
 .icons a {
     color: black;
     font-size: 1.2rem;
     text-decoration: none;
 }
+
 .icons a:hover {
-    color: gray; 
+    color: gray;
 }
 
 .carousel-item {
     position: relative;
 }
+
 .hero-content {
     position: absolute;
     top: 50%;
@@ -53,13 +70,16 @@ body {
     transform: translateY(-50%);
     color: black;
 }
+
 .hero-content h1 {
     font-size: 3rem;
     font-weight: bold;
 }
+
 .hero-content p {
     font-size: 1.2rem;
 }
+
 .btn-explore {
     background-color: black;
     color: white;
@@ -67,6 +87,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
 }
+
 /* Slide */
 .carousel-item {
     position: relative;
@@ -107,51 +128,45 @@ body {
     visibility: visible;
 }
 
-
-@media (max-width: 768px) {
-    .Subtitle {
-        width: 90% !important;
-        text-align: left !important;
-        left: 5% !important; /* Đưa nội dung sang trái */
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-    }
-
-    .Subtitle h2, .Subtitle p {
-        margin-bottom: 10px !important;
-    }
-
-    .Subtitle .btn {
-        width: auto !important;
-        max-width: 220px;
-        display: inline-block !important;
-        margin-top: 15px !important;
-    }
-}
-
-
-.carousel-item, .Subtitle {
+.carousel-item,
+.Subtitle {
     overflow: visible !important;
 }
 
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 40px;
-    height: 40px;
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    width: 60px !important;
+    height: 60px !important;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 50% !important;
+    margin: 0 30px;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 21.6px !important;
+    height: 21.6px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #111111 !important;
+    width: 60px !important;
+    height: 60px !important;
+}
 
 .carousel-indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: 5% !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     display: flex;
@@ -176,25 +191,28 @@ body {
     transform: scale(1.2) !important;
 }
 
-
 /* Featured Collections */
 .title {
     text-align: center;
     margin-top: 50px;
 }
+
 .title h3 {
     font-size: 45px;
     font-weight: 400;
 }
+
 .title p {
     font-size: 16px;
     font-weight: 400;
 }
+
 .product img {
-    
+
     height: auto;
     display: block;
 }
+
 .btn-custom {
     position: absolute;
     bottom: 10%;
@@ -206,11 +224,12 @@ body {
     font-size: 16px;
     font-weight: 500;
 }
+
 .product {
     position: relative;
-    background: #ECEDEF;
     padding: 10px;
-}   
+}
+
 .categories-wrapper {
     display: grid;
     grid-template-areas:
@@ -219,10 +238,21 @@ body {
     gap: 30px;
 }
 
-.wrapper-clothing { grid-area: clothing; }
-.wrapper-sunglasses { grid-area: sunglasses; }
-.wrapper-bags { grid-area: bags; }
-.wrapper-sneaker { grid-area: sneaker; }
+.wrapper-clothing {
+    grid-area: clothing;
+}
+
+.wrapper-sunglasses {
+    grid-area: sunglasses;
+}
+
+.wrapper-bags {
+    grid-area: bags;
+}
+
+.wrapper-sneaker {
+    grid-area: sneaker;
+}
 
 .wrapper-clothing,
 .wrapper-sunglasses,
@@ -259,26 +289,18 @@ body {
     background: #8b8b8b;
 }
 
-@media (max-width: 768px) {
-    .categories-wrapper {
-        display: grid;
-        grid-template-areas:
-            "clothing sunglasses"
-            "clothing sneaker"
-            "bags sneaker";
-        gap: 15px;
-    }
-}
 
 /* New Arrivals */
 .caption {
     text-align: center;
     margin-top: 50px;
 }
+
 .caption h4 {
     font-size: 35px;
     font-weight: 600;
 }
+
 .caption p {
     font-size: 16px;
     font-weight: 400;
@@ -286,7 +308,7 @@ body {
 }
 
 .carousel-container {
-    max-width: 1200px;
+    max-width: 1410px;
     margin: 0 auto;
     padding: 20px;
     overflow: hidden;
@@ -303,31 +325,20 @@ body {
 .product {
     flex: 0 0 calc(25% - 15px);
     /* 25% trừ đi phần gap để vừa 4 sản phẩm */
-    padding: 20px;
     border-radius: 8px;
     box-sizing: border-box;
 }
 
 .product img {
-   
+    max-width: 100%;
     /* Đảm bảo ảnh không vượt quá container */
     height: auto;
 }
 
 .prev-btn,
 .next-btn {
-        background-color: #f8f9fa;
-        color: #000;
-        border: 1px solid #EBEBEB;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    display: none;
+}
 
 .prev-btn {
     left: 10px;
@@ -337,18 +348,6 @@ body {
     right: 10px;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-    .product {
-        flex: 0 0 calc(50% - 10px);
-        /* 50% trừ đi gap để vừa 2 sản phẩm */
-    }
-
-    .prev-btn,
-    .next-btn {
-        display: block;
-    }
-}
 /* footer */
 .footer {
     max-width: 100%;
@@ -365,7 +364,6 @@ body {
 .footer .contact3,
 .footer .subscribe {
     flex: 1;
-    min-width: 250px;
     margin-bottom: 20px;
     font-size: 16px;
 }
@@ -411,107 +409,83 @@ body {
     font-size: 16px;
 }
 
-/* Responsive*/
-@media (max-width: 992px) {
-    .footer {
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .email {
-        flex-direction: column;
-    }
-
-    .footer .contact,
-    .footer .contact2,
-    .footer .contact3,
-    .footer .subscribe {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer {
-        padding: 20px;
-    }
-
-    .footer .contact,
-    .footer .contact2,
-    .footer .contact3,
-    .footer .subscribe {
-        width: 100%;
-
-        font-size: 14px;
-    }
-}
-
 .subscribe p {
     line-height: 1.5;
 }
 
-.contact2 {
-    margin-left: 30px;
-}
+
 .custom-select {
-    border: none;
+    border: none !important;
     background-color: transparent;
     padding-right: 10px;
 }
+
 .footer2 {
     border-top: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 35px 0;
     font-size: 14px;
 }
+
 .payment-icons img {
     height: 20px;
 }
+
 .bottom-nav {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
     bottom: 0;
+    position: fixed;
     left: 0;
     width: 100%;
     background: white;
-    
     padding: 10px 0;
-    
+
 }
 
 .nav-item {
     text-align: center;
-    flex: 1;
     position: relative;
     border: none !important;
     outline: none !important;
 }
+
 .nav-item i {
     font-size: 24px;
 }
-.nav-item .badge {
+
+.nav-item .badge-heart {
+    width: 18px;
+    height: 18px;
     position: absolute;
     top: 0;
-    right: 25%;
+    right: 10%;
     background: #d9534f;
+    border-radius: 50%;
     color: white;
     font-size: 12px;
-    padding: 4px 6px;
-  
 }
+
+.nav-item .badge-cart {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: -3%;
+    right: -10%;
+    background: #d9534f;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+}
+
 .active-tab {
-   
+
     width: 50px;
     margin: 5px auto 0;
 }
 
-/* Hiển thị trên mobile (dưới 768px) */
-@media (max-width: 768px) {
-    .bottom-nav {
-        display: flex;
-    }
-}
-.custom-btn {
+.scrollToTop,
+.message {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -522,6 +496,16 @@ body {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    position: fixed;
+    right: 20px;
+}
+
+.scrollToTop {
+    bottom: 18%;
+}
+
+.message {
+    bottom: 10%;
 }
 
 .custom-btn:hover {
@@ -545,16 +529,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    visibility: hidden; /* Mặc định ẩn */
+    visibility: hidden;
+    /* Mặc định ẩn */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-}
-
-/* Hiển thị trên mobile */
-@media (max-width: 768px) {
-    .btn-container {
-        visibility: visible;
-        opacity: 1;
-        left: 10px;
-    }
 }
